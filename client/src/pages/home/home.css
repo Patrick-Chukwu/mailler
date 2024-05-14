@@ -1,0 +1,6 @@
+.home {
+    padding: var(--small-gap);
+    justify-content: center;
+    align-items: center;
+    gap: var(--medium-gap);
+}
