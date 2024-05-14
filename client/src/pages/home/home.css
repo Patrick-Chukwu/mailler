@@ -1,6 +1,8 @@
 .home {
-    padding: var(--small-gap);
+    padding:var(--big-gap) var(--small-gap);
     justify-content: center;
     align-items: center;
     gap: var(--medium-gap);
+    background-color:  var(--secondary-color);
+    height: 100dvh;
 }
