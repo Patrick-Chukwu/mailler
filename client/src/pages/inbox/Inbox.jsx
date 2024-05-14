@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './inbox.css'
 
 function Inbox() {
@@ -28,12 +29,15 @@ function Inbox() {
             
             {(message.isRead )? (
               <div className="column read">
-         <strong className='subject'>{message.subject}</strong>
+       <Link to="/messages/1" className='subject'>{message.subject}</Link>
             <p className='content'>{message.content}</p>
               </div>
    
             ) : (
-            <span className='unread'>Message unread</span>
+              <div className="column unread">
+              <Link to="/messages/:id" className='subject'>{message.subject}</Link>
+                 <p className='content'>{message.content}</p>
+                   </div>
             )}
           </p>
         ))}
