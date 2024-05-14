@@ -8,82 +8,21 @@ app.use(cors(
 }
 ));
 
-app.get("/api", (req, res) => {
-    // console.log("Request received at /api endpoint");
-    const messages = [
-        {
-            "subject": "Hi Again",
-            "content": "Just wanted to check on you Just wanted to let you know I’m good vJust wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Friend",
-            "content": "Just wanted to let you know I’m good",
-            "isRead": false
-        },
-        {
-            "subject": "Hi Pat",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Sommy",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Friend",
-            "content": "Just wanted to let you know I’m good",
-            "isRead": false
-        },
-        {
-            "subject": "Hi Pat",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Sommy",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Again",
-            "content": "Just wanted to check on you Just wanted to let you know I’m good vJust wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Friend",
-            "content": "Just wanted to let you know I’m good",
-            "isRead": false
-        },
-        {
-            "subject": "Hi Pat",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Sommy",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Friend",
-            "content": "Just wanted to let you know I’m good",
-            "isRead": false
-        },
-        {
-            "subject": "Hi Pat",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        },
-        {
-            "subject": "Hi Sommy",
-            "content": "Just wanted to let you know I’m good Just wanted to let you know I’m good Just wanted to let you know I’m good ",
-            "isRead": true
-        }
-    ];
+const messages = [
+    { subject: "Hi Again", content: "Just wanted to check on you", isRead: true },
+    { subject: "Hi Friend", content: "Just wanted to let you know I’m good", isRead: false }
+  ];
 
+app.get("/api", (req, res) => {
     res.json({ "messages": messages });
 });
 
+app.get('/api/:id', (req, res) => {
+    const id = req.params.id;
+    const message = messages[id];
+    if (message) {
+      res.json(message);
+    } else {
+      res.status(404).json({ message: "Message not found" });
+    }  });
 app.listen(5000, () => { console.log("Server is running on Port 5000") });
