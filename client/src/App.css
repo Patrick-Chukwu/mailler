@@ -21,4 +21,5 @@
     color: var(--white-color);
     text-decoration: none;
     cursor: pointer;
+    border-radius: 5px;
 }

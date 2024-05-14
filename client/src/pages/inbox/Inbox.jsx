@@ -23,11 +23,19 @@ function Inbox() {
       <h2>Your Messages</h2>
       <ul>
         {messages.map((message, index) => (
-          <li key={index}>
-            <strong className='subject'>{message.subject}</strong>
+          <p key={index}>
+            
+            
+            {(message.isRead )? (
+              <div className="column read">
+         <strong className='subject'>{message.subject}</strong>
             <p className='content'>{message.content}</p>
-            {message.isRead ? <span>I've Read</span> : <span>Unread</span>}
-          </li>
+              </div>
+   
+            ) : (
+            <span className='unread'>Message unread</span>
+            )}
+          </p>
         ))}
       </ul>
     </div>

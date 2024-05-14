@@ -1,3 +1,23 @@
 .inbox {
-    background-color: #fff;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.subject {
+    text-align: left;
+    color: #000;
+}
+
+.unread {
+    display: none;
+}
+
+.read {
+    gap: 1em;
+    width: 200px;
+    overflow-wrap: ;
 }
