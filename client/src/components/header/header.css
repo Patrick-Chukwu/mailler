@@ -1,0 +1,23 @@
+.navbar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 3dvh 1.5rem;
+    background-color: var(--primary-color);
+
+}
+
+.nav_links {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+.logo {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav_links:hover {
+    color: black;
+}
