@@ -6,3 +6,8 @@
     background-color:  var(--secondary-color);
     height: 100dvh;
 }
+
+.unique {
+    color: var(--primary-color);
+    font-weight: 700;
+}
