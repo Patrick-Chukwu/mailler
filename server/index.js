@@ -12,7 +12,11 @@ const messages = [
     { subject: "Hi Again", content: "Just wanted to check on you", isRead: true },
     { subject: "Hi Friend", content: "Just wanted to let you know I’m good", isRead: false },
     { subject: "Hi Pat", content: "Just wanted to know how you are", isRead: true },
-    { subject: "Hi man", content: "Just hoping you're well", isRead: true }
+    { subject: "Hi man", content: "Just hoping you're okay", isRead: false },
+    { subject: "Hi my guy", content: "Just wanted to know id you're fine", isRead: true },
+    { subject: "Hi Friend", content: "Just wanted to let you know I’m good", isRead: false },
+    { subject: "Yo Pat", content: "Just wanted to know how you are", isRead: false },
+    { subject: "Hey man", content: "Just hoping you're well", isRead: false }
   ];
 
 app.get("/messages", (req, res) => {
