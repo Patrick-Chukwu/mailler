@@ -63,7 +63,7 @@ function Inbox() {
           </div>
           <div className="row mail_status">
           <h3>Status: </h3>
-          {message.isRead ? <span>Read</span> : <span>Unread mail</span>}
+          {message.isRead ? <span>Read</span> : <span className='unread'>Unread</span>}
   
           </div>
           </div>
