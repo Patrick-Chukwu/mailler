@@ -26,5 +26,14 @@ app.get('/messages/:id', (req, res) => {
       res.json(message);
     } else {
       res.status(404).json({ message: "Message not found" });
-    }  });
+    }  
+  });
+// Listen to the put method for updating status
+app.put('/messages/mark-as-read/:index', (req, res) => {
+  const { index } = req.params;
+  messages[index].isRead = true;
+  res.sendStatus(200);
+});
+
+
 app.listen(5000, () => { console.log("Server is running on Port 5000") });
