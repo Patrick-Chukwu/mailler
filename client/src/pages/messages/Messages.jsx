@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import './messages.css'
 function Messages() {
   const { id } = useParams();
   const [message, setMessage] = useState(null);
@@ -18,12 +19,11 @@ function Messages() {
   };
 
   return (
-    <div className="message">
+    <div className="messages">
       {message ? (
-        <div>
+        <div className='message_body'>
           <h2 className='read_subject'>{message.subject}</h2>
           <p>{message.content}</p>
-          {message.isRead ? <p>Message read</p> : <p>Unread</p>}
         </div>
       ) : (
         <p>Loading...</p>

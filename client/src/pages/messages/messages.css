@@ -1,0 +1,14 @@
+.messages {
+    background-color: var(--secondary-color);
+
+}
+
+.message_body {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 80%;
+}
+
+.read_subject {
+    color: var(--primary-color);
+}
