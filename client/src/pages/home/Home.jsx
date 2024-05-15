@@ -10,7 +10,7 @@ const Home = () => {
     <div className='column home'>
         <h2>Hello {user}</h2>
         <p>You have {unreadMessage} unread messages out of {totalMessages} messages </p>
-        <Link className='link' to="/inbox">View messages</Link>
+        <Link className='button' to="/inbox">View messages</Link>
     </div>
   )
 }
