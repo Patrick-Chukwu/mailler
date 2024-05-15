@@ -19,9 +19,22 @@ function Inbox() {
     }
   };
 
-  const reduceText = (text, maxLength) => {
+  const reduceContent = (text, maxLength) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + '...';
+  };
+
+
+  const updateReadStatus = async (index) => {
+    try {
+      const updatedMessages = [...messages];
+      updatedMessages[index].isRead = true;
+      setMessages(updatedMessages);
+      //  update backend with the new isRead status
+      await fetch(`https://mailler-backend.vercel.app/messages/mark-as-read/${index}`, { method: 'PUT' });
+    } catch (error) {
+      console.error('Error marking message as read:', error);
+    }
   };
 
   return (
@@ -33,11 +46,12 @@ function Inbox() {
         <li key={index}>
           <h3 className='subject'>{message.subject}</h3>
           <p>
-            <Link className='links' to={`/messages/${index}`}>
-              {reduceText(message.content, message.content.length / 2)}
+            <Link className='links' to={`/messages/${index}`}
+             onClick={() => updateReadStatus(index)}>
+              {reduceContent(message.content, message.content.length / 2)}
             </Link>
           </p>
-          {message.isRead ? <span>Read</span> : <span>Unread</span>}
+          {message.isRead ? <span>Read</span> : <span>Unread mail</span>}
         </li>
       ))}
     </ul>
