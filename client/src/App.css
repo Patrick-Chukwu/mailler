@@ -15,11 +15,15 @@
     flex-direction: column;
 }
 
-.link {
+.button {
     background-color: var(--primary-color);
     padding: 1rem 1.5rem;
     color: var(--white-color);
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+li {
+    list-style-type: none;
 }

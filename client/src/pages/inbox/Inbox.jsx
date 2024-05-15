@@ -27,7 +27,7 @@ function Inbox() {
   return (
 
     <div className='inbox'>
-    <h2>Messages</h2>
+    <h2>Your Messages</h2>
     <ul>
       {messages.map((message, index) => (
         <li key={index}>
