@@ -11,7 +11,7 @@ app.use(cors(
 const messages = [
     { subject: "Hi Again", content: "Just wanted to check on you", isRead: true },
     { subject: "Hi Friend", content: "Just wanted to let you know I’m good", isRead: false },
-    { subject: "Hi Pat", content: "Just wanted to knpw how you are", isRead: true },
+    { subject: "Hi Pat", content: "Just wanted to know how you are", isRead: true },
     { subject: "Hi man", content: "Just hoping you're well", isRead: true }
   ];
 
