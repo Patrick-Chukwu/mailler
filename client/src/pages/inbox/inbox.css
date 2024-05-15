@@ -23,4 +23,19 @@
 
 .links {
     text-decoration: none;
+    color: initial;
+}
+
+.inbox .row {
+    /* border: 1px solid brown; */
+    justify-content: left;
+    align-items: center;
+    gap: var(--medium-gap);
+    text-align: left;
+    padding: .1rem;
+}
+
+.mail {
+    margin-bottom: .5rem;
+    border: 1px solid var(--secondary-color);
 }
