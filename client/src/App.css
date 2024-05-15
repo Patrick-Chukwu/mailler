@@ -27,3 +27,7 @@
 li {
     list-style-type: none;
 }
+
+h2 {
+    margin-bottom: 1rem;
+}
