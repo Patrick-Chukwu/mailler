@@ -19,30 +19,29 @@ function Inbox() {
     }
   };
 
+  const reduceText = (text, maxLength) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
+  };
+
   return (
-    <div className='column inbox'>
-      <h2>Your Messages</h2>
-      <ul>
-        {messages.map((message, index) => (
-          <p key={index}>
-            
-            
-            {(message.isRead )? (
-              <div className="column read">
-       <Link to="/messages/1" className='subject'>{message.subject}</Link>
-            <p className='content'>{message.content}</p>
-              </div>
-   
-            ) : (
-              <div className="column unread">
-              <Link to="/messages/:id" className='subject'>{message.subject}</Link>
-                 <p className='content'>{message.content}</p>
-                   </div>
-            )}
+
+    <div className='inbox'>
+    <h2>Messages</h2>
+    <ul>
+      {messages.map((message, index) => (
+        <li key={index}>
+          <h3 className='subject'>{message.subject}</h3>
+          <p>
+            <Link className='links' to={`/messages/${index}`}>
+              {reduceText(message.content, message.content.length / 2)}
+            </Link>
           </p>
-        ))}
-      </ul>
-    </div>
+          {message.isRead ? <span>Read</span> : <span>Unread</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }
 
