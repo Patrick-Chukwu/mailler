@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express()
 
 app.use(cors(
-    {    origin : ["http://localhost:5173", "https://mymailler.vercel.app/"]
+    {    origin : ["http://localhost:5173", "https://mymailler.vercel.app"]
 }
 ));
 
@@ -15,7 +15,7 @@ const messages = [
     { subject: "Hi man", content: "Just hoping you're well", isRead: true }
   ];
 
-app.get("/api", (req, res) => {
+app.get("/messages", (req, res) => {
     res.json({ "messages": messages });
 });
 
